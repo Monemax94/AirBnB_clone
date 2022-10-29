@@ -24,7 +24,7 @@ class BaseModel():
                     (kwargs["created_at"], "%Y-%m-%dT%H:%M:%S:%f")
                 elif key == "updated_at":
                     self.__dict__["updated_at"] = datetime.strptime
-                    (kwargs["update_at"], "%Y-%m-%dT%H:%M:%S:%f")
+                    (kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S:%f")
 
                 else:
                     self.__dict__[key] = kwargs[key]
@@ -40,7 +40,7 @@ class BaseModel():
         making it readable """
 
         return "[{}] ({}) {}".\
-            format(type(self)__name__, self.id, self.__dict__)
+            format(type(self).__name__, self.id, self.__dict__)
 
     def save(self):
 
